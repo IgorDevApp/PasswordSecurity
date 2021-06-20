@@ -23,6 +23,7 @@ export default function Senhas() {
   const [openV, setOpenV] = useState(false);
   const [input, setInput] = useState("");
   const [inputUser, setInputUser] = useState("");
+  const [inputEmail, setInputEmail] = useState("");
   const [inputsenha, setInputsenha] = useState("");
   const navigation = useNavigation();
   useEffect(() => {
@@ -51,6 +52,7 @@ export default function Senhas() {
       key: input,
       task: input,
       user: inputUser,
+      email: inputEmail,
       senha: inputsenha,
     };
 
@@ -59,6 +61,7 @@ export default function Senhas() {
     setInput("");
     setInputUser("");
     setInputsenha("");
+    setInputEmail("");
   }
 
   const handleDelete = useCallback((data) => {
@@ -121,6 +124,15 @@ export default function Senhas() {
               autoCorrect={false}
               value={inputUser}
               onChangeText={(texto) => setInputUser(texto)}
+            ></TextInput>
+            <TextInput
+              placeholder="Qual o Email?"
+              textAlign="center"
+              style={styles.TextInput}
+              maxLength={30}
+              autoCorrect={false}
+              value={inputEmail}
+              onChangeText={(texto) => setInputEmail(texto)}
             ></TextInput>
             <TextInput
               placeholder="Senha?"

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Security",
-    "slug": "Security",
+    "name": "SecurityPass",
+    "slug": "SecurityPass",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -20,9 +20,10 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.IgorDevApp.SecurityPass",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./assets/adaptiveicon.png",
+        "backgroundColor": "#999999"
       },
       "permissions":["USE_FINGERPRINT", "USE_BIOMETRIC" ]  
       }

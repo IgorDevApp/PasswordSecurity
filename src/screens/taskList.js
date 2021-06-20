@@ -102,12 +102,12 @@ export default function TaskList({ data, handleDelete }) {
           </TouchableOpacity>
         </View>
       </TouchableOpacity>
-      <Modal animationType="fade" transparent={true} visible={Open}>
+      <Modal animationType="slide" transparent={true} visible={Open}>
         <SafeAreaView
           style={{
             backgroundColor: colo,
-            width: 370,
-            height: 200,
+            width: 380,
+            height: 230,
             marginTop: 90,
             marginHorizontal: 20,
             borderRadius: 10,
@@ -133,8 +133,9 @@ export default function TaskList({ data, handleDelete }) {
             </View>
           </View>
           <View style={styles.Infor}>
-            <Text style={styles.txtInf}>Usuario:{data.user}</Text>
-            <Text style={styles.txtInf}>Senha:{data.senha}</Text>
+            <Text style={styles.txtInf}>Usuario: {data.user}</Text>
+            <Text style={styles.txtInf}>Email: {data.email}</Text>
+            <Text style={styles.txtInf}>Senha: {data.senha}</Text>
           </View>
         </SafeAreaView>
       </Modal>
@@ -152,8 +153,8 @@ const styles = StyleSheet.create({
     position: "relative",
     margin: 20,
     justifyContent: "center",
-    width: 300,
-    height: 80,
+    width: 340,
+    height: 120,
     borderRadius: 10,
     backgroundColor: "#fff",
     elevation: 1.5,

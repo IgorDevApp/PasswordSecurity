@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import {
   StyleSheet,
   Text,
@@ -13,6 +13,7 @@ import {
   Platform,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as LocalAuthentication from "expo-local-authentication";
 import { useNavigation } from "@react-navigation/native";
 export default function Login() {
@@ -36,15 +37,16 @@ export default function Login() {
   }
 
   Platform.OS === "ios" && authenticate();
-
+  const nvpass = "123456789";
   const navigation = useNavigation();
   const [senha, setSenha] = useState("");
   function esenha() {
-    if (senha === "igor123") {
+    if (senha === nvpass) {
       navigation.navigate("Senhas");
       setSenha("");
     }
   }
+
   esenha();
   return (
     <SafeAreaView style={styles.Container}>
@@ -56,7 +58,6 @@ export default function Login() {
         onChangeText={(text) => setSenha(text)}
         value={senha}
       ></TextInput>
-
       {Platform.OS === "android" && (
         <Modal
           animationType="slide"
